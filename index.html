@@ -75,8 +75,7 @@
 
                 reader.onload = function (e) {
                     const text = e.target.result;
-                    fileContent = text.split('\n').filter(line => line.trim() !== ""); // Remove linhas vazias
-
+                    fileContent = text.split('\n').filter(line => line.trim() !== ""); 
                     const endTime = performance.now();
                     const timeTaken = (endTime - startTime).toFixed(2);
                     const totalLines = fileContent.length;
