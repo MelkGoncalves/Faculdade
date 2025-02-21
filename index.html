@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 3</title>
+    <style>
+        #output {
+            white-space: pre;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: bisque;
+        }
+
+        .controls {
+            margin: 10px 0;
+        }
+
+        #lineSelector {
+            margin: 0 10px;
+            padding: 5px;
+        }
+
+        #selectedLine,
+        #readTime,
+        #lineCount {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #selectedLine {
+            color: blue;
+        }
+
+        #readTime {
+            color: green;
+        }
+
+        #lineCount {
+            color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <input type="file" id="fileInput" accept=".txt">
+        <div class="controls">
+            <label for="lineSelector">Selecionar linha:</label>
+            <input type="number" id="lineSelector" min="1" value="1">
+            <button id="readLine">Ler Linha</button>
+        </div>
+        <div id="output">Nenhum arquivo carregado.</div>
+        <div id="selectedLine"></div>
+        <div id="readTime"></div>
+        <div id="lineCount"></div>
+
+        <script>
+            let fileContent = [];
+            const output = document.getElementById('output');
+            const lineSelector = document.getElementById('lineSelector');
+            const readLineButton = document.getElementById('readLine');
+            const selectedLineDiv = document.getElementById('selectedLine');
+            const readTimeDiv = document.getElementById('readTime');
+            const lineCountDiv = document.getElementById('lineCount');
+
+            document.getElementById('fileInput').addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                const startTime = performance.now();
+
+                reader.onload = function (e) {
+                    const text = e.target.result;
+                    fileContent = text.split('\n').filter(line => line.trim() !== ""); // Remove linhas vazias
+
+                    const endTime = performance.now();
+                    const timeTaken = (endTime - startTime).toFixed(2);
+                    const totalLines = fileContent.length;
+
+                    lineSelector.max = totalLines;
+                    output.textContent = `Arquivo carregado com sucesso! (${totalLines} linhas)`;
+                    selectedLineDiv.textContent = '';
+
+                    readTimeDiv.textContent = `Tempo de leitura: ${timeTaken} ms`;
+                    lineCountDiv.textContent = `Total de linhas: ${totalLines}`;
+                };
+
+                reader.readAsText(file);
+            });
+
+            readLineButton.addEventListener('click', function () {
+                const selectedLine = parseInt(lineSelector.value);
+
+                if (fileContent.length === 0) {
+                    selectedLineDiv.textContent = "Por favor, selecione um arquivo primeiro.";
+                    selectedLineDiv.style.color = "red";
+                    return;
+                }
+
+                if (selectedLine < 1 || selectedLine > fileContent.length) {
+                    selectedLineDiv.textContent = `Por favor, selecione uma linha entre 1 e ${fileContent.length}`;
+                    selectedLineDiv.style.color = "red";
+                    return;
+                }
+
+                selectedLineDiv.textContent = `Linha ${selectedLine}: ${fileContent[selectedLine - 1]}`;
+                selectedLineDiv.style.color = "blue";
+            });
+        </script>
+    </div>
+</body>
+
+</html>
