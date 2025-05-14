@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Menu com Submenu</title>
+    <title>Menu com Submenue carrossel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <nav class=" bg-gray-800 text-white p-4 menuu">
+        <nav class=" bg-gray-800 text-white p-4 ">
             <ul class="menu md:flex hidden " id="mainMenu">
                 <li><a href="#">Home</a></li>
                 <li>
@@ -48,43 +48,15 @@
 
     <main>
      
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-slide">
-                    <img class="slide-active" src="/img-1.png" alt="Imagem 1">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-2.png" alt="Imagem 2">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-3.pn" alt="Imagem 3">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-4.pn" alt="Imagem 4">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-5.pn" alt="Imagem 5">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-6.pn" alt="Imagem 6">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-7.pn" alt="Imagem 7">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-8.pn" alt="Imagem 8">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="/img-9.pn" alt="Imagem 9">
-                </div>
-                <div class="carousel-slide">
-                    <img class="slide" src="i/img-10.pn" alt="Imagem 10">
-                </div>
+        <div class="carrossel">
+            <div class="slides">
+                <img src="/img-1.jpeg" alt="Carro Esportivo" class="slide active">
+                <img src="/img-2.jpg" alt="uma lagoa" class="slide">
+                <img src="/img-3.jpg" alt="Plantas" class="slide">
+                <img src="/img-4.jpeg" alt="um rio com arvores" class="slide">
             </div>
-
-            <a class="prev" onclick="plusSlides(-1)"><img src="img/prev.png" alt=""></a>
-            <a class="next" onclick="plusSlides(1)"><img src="img/next.png" alt=""></a>
-
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
             <div class="indicadores">
                 <span class="indicador active"></span>
                 <span class="indicador"></span>
