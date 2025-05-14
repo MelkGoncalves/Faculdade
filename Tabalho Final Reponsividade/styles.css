@@ -66,6 +66,51 @@
    object-fit: contain;
 }
 
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+
+}
+
+.carousel-slide {
+    display: flex;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide-active {
+    display: block;
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    background-color: rgba(0,0,0,0,.3);
+    
+}
+
+
 /*Aqui criei estilos para dispositivos móveis */
 @media (max-width: 768px) {
     
