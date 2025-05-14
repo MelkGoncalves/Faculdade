@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Menu com Submenu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="bg-gray-800 text-white p-4">
+        <ul class="menu md:flex hidden" id="mainMenu">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Produtos</a>
+                <ul class="submenu">
+                    <li><a href="#">Eletrônicos</a></li>
+                    <li><a href="#">Móveis</a></li>
+                    <li><a href="#">Roupas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Serviços</a>
+                <ul class="submenu">
+                    <li><a href="#">Consultoria</a></li>
+                    <li><a href="#">Suporte Técnico</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contato</a>
+                <ul class="submenu">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="line md:hidden cursor-pointer" id="menuToggle">
+        <div class="line-item"></div>
+        <div class="line-item"></div>
+        <div class="line-item"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
