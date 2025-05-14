@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Menu com Submenue carrossel</title>
+    <title>Menu com Submenu e carrossel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="bg-gray-800 ">
     <header>
         <nav class=" bg-gray-800 text-white p-4 ">
             <ul class="menu md:flex hidden " id="mainMenu">
@@ -47,7 +47,7 @@
     </header>
 
     <main>
-     
+
         <div class="carrossel">
             <div class="slides">
                 <img src="/img-1.jpeg" alt="Carro Esportivo" class="slide active">
@@ -63,8 +63,28 @@
                 <span class="indicador"></span>
             </div>
         </div>
-        
+
+        <div class="flex flex-col justify-center items-center gap-3">
+            <h1 class="text-center text- text-white">Desenvolvimento Responsivo</h1>
+            <p class="text-center text-white">
+                Este é um exemplo de um menu com submenus e um carrossel de imagens. O menu é responsivo e se adapta a
+                diferentes tamanhos de tela. O
+                carrossel permite navegar entre as imagens usando botões de navegação e indicadores.
+            </p>
+
+            <p class="text-white text-center text-wrap pb-2"> 
+                Foi uma experiencia incrível desenvolver este projeto, pois aprendi muito sobre como criar um layout
+                responsivo e funcional.
+                Lógico que com grandes desafios, mas com pesquisa e as aulas do professor
+            </p>
+        </div>
     </main>
+
+    <footer>
+        <div class="bg-gray-800 text-red-400  flex flex wrap justify-center">
+            <strong>&copy; 2025 Desenvolvimento Responsivo. Melquisedek Gonçalves Almeida.</strong>
+        </div>
+    </footer>
 
 
     <script src="script.js"></script>
